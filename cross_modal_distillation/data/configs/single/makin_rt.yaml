@@ -1,0 +1,12 @@
+defaults: 
+  - base@makin_rt.config
+
+makin_rt:
+  _target_: cross_modal_distillation.data.makin_dataset.MakinRTDataset
+  config:
+    save_dir: ${config.makin_rt.config.root_save_dir}/MakinRT
+    lfp_lp_cutoff: 50
+    lfp_hp_cutoff: 0.05
+    
+    pretrain_sessions: 
+      - MonkeyI.*

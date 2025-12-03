@@ -1,0 +1,27 @@
+delta: 10
+segment_length: 1
+z_score_kinem: True
+root_save_dir: ./results/data
+
+d_lfp: 999
+lfp_lp_cutoff: 50
+lfp_hp_cutoff: 0.05
+z_score_lfp: True
+
+# Configurations for aligning trials to movement onset
+trial_align: False
+segment_from_existing_data: False
+existing_data_segment_length: 10
+
+# For pretraining sessions
+val_ratio: 0.1
+test_ratio: 0.1
+
+# Dataset processing
+force_reprocess_stage1: False
+force_reprocess_stage2: False
+
+pretrain_sessions: 
+  - .*
+finetune_sessions: 
+  - 

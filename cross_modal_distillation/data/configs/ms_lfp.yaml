@@ -1,0 +1,28 @@
+defaults:
+  - single/makin_rt@config
+  - single/flint_co@config
+
+  
+_target_: cross_modal_distillation.data.multi_dataset.MultiSessionDataset
+_recursive_: False
+config:
+  makin_rt: 
+    config:
+      segment_from_existing_data: True
+      existing_data_segment_length: 10
+      segment_length: 5
+      finetune_sessions:  
+        - MonkeyI_20160622_01
+        - MonkeyI_20161013_03
+        - MonkeyI_20170124_01
+        - MonkeyI_20160630_01
+        - MonkeyI_20160915_01
+  flint_co: 
+    config:
+      segment_from_existing_data: True
+      existing_data_segment_length: 10
+      segment_length: 5
+      finetune_sessions:  
+        - MonkeyC_e1_1
+        - MonkeyC_e4_1
+        - MonkeyC_e5_2

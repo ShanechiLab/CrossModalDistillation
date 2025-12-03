@@ -1,0 +1,12 @@
+defaults: 
+  - base@flint_co.config
+
+flint_co:
+  _target_: cross_modal_distillation.data.flint_dataset.FlintCODataset
+  config:
+    save_dir: ${config.flint_co.config.root_save_dir}/FlintCO
+    lfp_lp_cutoff: 50
+    lfp_hp_cutoff: 0.05
+    
+    pretrain_sessions: 
+      - MonkeyC.*
